@@ -64,7 +64,6 @@ public class EscposprinterPlugin implements MethodCallHandler {
         result.success(list);
     }
 
-
     public void connectPrinter(Integer vendorId, Integer productId, Result result) {
         if(!adapter.selectDevice(vendorId, productId)){
           result.success(false);
@@ -73,12 +72,10 @@ public class EscposprinterPlugin implements MethodCallHandler {
         }
     }
 
-
     public void closeConn(Result result) {
         adapter.closeConnectionIfExists();
         result.success(true);
     }
-
 
     public void printText(String text, Result result) {
         adapter.printText(text);
